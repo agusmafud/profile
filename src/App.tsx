@@ -13,8 +13,8 @@ import {
   personalInfo,
   education,
   summary,
-  professionalExperiences,
   devStack,
+  professionalExperiences,
 } from 'data/profile';
 
 function App() {

@@ -12,7 +12,7 @@ const SectionTitle = ({
   <Heading
     as="h2"
     size="md"
-    marginBottom={4}
+    marginBottom={6}
     padding={4}
     background="#D6F3FF"
     color="#0A4478"

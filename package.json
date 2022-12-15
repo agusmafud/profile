@@ -1,5 +1,6 @@
 {
   "name": "profile-page",
+  "homepage": "https://agusmafud.github.io/profile/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

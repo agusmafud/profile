@@ -52,6 +52,7 @@ function PageHeader({
           borderLeftRadius={{ base: 'lg', md: 'none' }}
         />
       </Box>
+      {/* Spacer */}
       <Box order={1} width="5vw" height={4} />
       <Box
         order={{ base: 2, md: 0 }}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { IconType } from 'react-icons/lib';
 
 export type PersonalInfoItem = {
   key: string,
@@ -14,9 +15,12 @@ export type Education = {
 };
 
 export type Skill = {
-  label: string,
-  Icon?: React.ReactElement,
+  label?: string,
+  SkillIcon?: IconType,
+  skillIconColor?: string,
   description: string,
+  highlighted?: boolean,
+  variant?: 'bullet' | 'badge',
 };
 
 export type DevStackItem = {
@@ -37,4 +41,10 @@ export type ProfessionalExperienceItem = {
 export type NavigationSection = {
   label: string,
   url: string,
+};
+
+export type Toast = {
+  description: string,
+  ToastIcon?: IconType,
+  iconColor?: string,
 };
