@@ -13,9 +13,7 @@ const Skills = ({
   skills: SkillProps[],
   index: number,
 }) => {
-  const {
-    handleBadgeClick,
-  } = useToast();
+  const { handleBadgeClick } = useToast();
 
   return (
     <HStack

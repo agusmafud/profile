@@ -34,6 +34,8 @@ const ProfessionalExperience = (
         const companyNameRender = companyLink
           ? <Link href={companyLink} isExternal>{companyName}</Link>
           : companyName;
+
+        // TODO: move to helpers
         const dateRender = (date: Date) => (
           `${date.toLocaleString('en-US', { month: 'long' })} ${date.getFullYear()}`
         );
@@ -44,23 +46,27 @@ const ProfessionalExperience = (
         );
         const ListComponent = useBullets ? UnorderedList : VStack;
         const ItemComponent = useBullets ? ListItem : Text;
+        const key = (companyName ?? '') + (title ?? '') + (startDate ?? '');
 
         return (
           <Box
-            key={companyName + startDate}
+            key={key}
             width="100%"
           >
             <Text fontSize="md" as="b">
-              {companyNameRender}
-              {' - '}
+              {companyName && (
+                <>
+                  {companyNameRender}
+                  {' - '}
+                </>
+              )}
               {title}
             </Text>
-            <Text fontSize="md" color="gray.600">
-              {dateRangeRender({
-                start: startDate,
-                end: endDate,
-              })}
-            </Text>
+            {startDate && (
+              <Text fontSize="md" color="gray.600">
+                {dateRangeRender({ start: startDate, end: endDate })}
+              </Text>
+            )}
             <ListComponent
               align="flex-start"
               spacing={3}

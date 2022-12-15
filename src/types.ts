@@ -29,9 +29,9 @@ export type DevStackItem = {
 };
 
 export type ProfessionalExperienceItem = {
-  startDate: Date,
+  startDate?: Date,
   endDate?: Date,
-  companyName: string,
+  companyName?: string,
   companyLink?: string,
   title: string,
   experiences: string[],

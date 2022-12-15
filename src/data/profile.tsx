@@ -2,12 +2,16 @@ import React from 'react';
 import {
   SiHtml5, SiGit, SiWebpack, SiEslint, SiJenkins, SiJirasoftware, SiCss3, SiChakraui, SiMaterialui,
   SiGithub, SiRedux, SiReduxsaga, SiReactrouter, SiStorybook, SiBootstrap, SiBulma, SiJest,
-  SiTypescript, SiJavascript, SiReact, SiTestinglibrary,
+  SiTypescript, SiJavascript, SiReact, SiTestinglibrary, SiFirebase, SiAwsamplify, SiMicrosoftazure,
+  SiGoogleanalytics, SiGoogletagmanager,
 } from 'react-icons/si';
+import { HiOutlineDocumentSearch } from 'react-icons/hi';
+import { TiLocationOutline } from 'react-icons/ti';
 import { IoLogoSass } from 'react-icons/io';
 import { SlGrid } from 'react-icons/sl';
 import { FaNpm } from 'react-icons/fa';
-import { MdHttp } from 'react-icons/md';
+import { MdHttp, MdOutlineMarkEmailRead } from 'react-icons/md';
+import { RxAccessibility } from 'react-icons/rx';
 
 import ExternalLink from 'base-components/ExternalLink';
 import {
@@ -120,7 +124,6 @@ export const devStack: DevStackItem[] = [{
   }, {
     label: 'Jenkins',
     SkillIcon: SiJenkins,
-    skillIconColor: 'black',
     description: 'Jenkins helps automate the parts of software development related to building, testing, and deploying, facilitating continuous integration and continuous delivery.',
   }, {
     label: 'Jira',
@@ -171,7 +174,6 @@ export const devStack: DevStackItem[] = [{
   }, {
     label: 'Flex Box / Css Grid',
     SkillIcon: SlGrid,
-    skillIconColor: 'black',
     description: 'Float, grid, flexbox, positioning, display and box model are some of the key topics that are used for making layouts.',
   }, {
     label: 'SASS',
@@ -228,13 +230,19 @@ export const devStack: DevStackItem[] = [{
   label: 'Cloud',
   skills: [{
     label: 'Firebase',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: SiFirebase,
+    skillIconColor: '#FFCB2B',
+    description: 'Firebase provides a cross-platform SDKs to help you build and ship apps on the web.',
   }, {
     label: 'AWS Amplify',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: SiAwsamplify,
+    skillIconColor: '#FF9900',
+    description: 'AWS amplify let developers of both web and mobile applications convert their static applications to scalable full-stack applications.',
   }, {
     label: 'MS Azure',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: SiMicrosoftazure,
+    skillIconColor: '#2573BE',
+    description: 'Microsoft Azure is a cloud computing platform for application management via around the world-distributed data centers.',
   }],
 }, {
   label: 'Internet',
@@ -245,56 +253,79 @@ export const devStack: DevStackItem[] = [{
     description: 'HTML5 is a markup language used for structuring and presenting content on the World Wide Web.',
   }, {
     label: 'accessibility',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: RxAccessibility,
+    description: 'Web accessibility means that websites, tools, and technologies are designed and developed in such a way that people with disabilities can use them easily.',
   }, {
     label: 'internationalization',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: TiLocationOutline,
+    description: 'Internationalization ("I18N") is the process of planning and implementing products and services so that they can easily be adapted to specific local languages and cultures, a process called localization',
   }, {
     label: 'SEO',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: HiOutlineDocumentSearch,
+    description: 'Search engine optimization is the process of improving the quality and quantity of website traffic to a website or a web page from search engines. SEO targets unpaid traffic rather than direct traffic or paid traffic.',
   }, {
     label: 'Google Analytics',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: SiGoogleanalytics,
+    skillIconColor: '#E37400',
+    description: 'Google Analytics is a platform that collects data from your websites and apps to create reports that provide insights into your business.',
   }, {
     label: 'Google Tag Manager',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: SiGoogletagmanager,
+    skillIconColor: '#4FC3F7',
+    description: 'Google Tag Manager is a tag management system that allows you to easily update measurement codes and related code fragments collectively known as tags on your website or mobile app.',
   }, {
     label: 'Google Lighthouse',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    description: 'Google Lighthouse is an automated tool for measuring the quality of web pages. It audits performance, accessibility and search engine optimization of web pages.',
   }, {
     label: 'email marketing',
-    description: 'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content.',
+    SkillIcon: MdOutlineMarkEmailRead,
+    description: 'Email marketing is the act of sending a commercial message using email. HTML emails can be built for sending visual dynamic contents.',
   }],
 }];
 
 export const professionalExperiences: ProfessionalExperienceItem[] = [{
-  startDate: new Date('November 2021'),
-  endDate: new Date('December 2022'),
+  startDate: new Date('1 November 2021 9:00:00 UTC-03:00'),
+  endDate: new Date('1 December 2022 9:00:00 UTC-03:00'),
   companyName: 'Nimble',
   companyLink: 'https://nimble.la',
   title: 'Frontend Developer',
   experiences: [
-    'Built new React web version for ResortPass, an ecommerce that offers day access to luxury hotel amenities.',
-    'Worked on the web CRM and workflow collaboration tool Alltum',
+    'Built new React web version for ResortPass, an ecommerce that offers day access to luxury hotel amenities (https://www.resortpass.com).',
+    'Worked on the web CRM and workflow collaboration tool Alltum (https://alltum.io).',
   ],
   useBullets: true,
 }, {
-  startDate: new Date('November 2015'),
-  endDate: new Date('December 2016'),
-  companyName: 'Nimble',
-  companyLink: 'https://nimble.la',
+  startDate: new Date('1 November 2020 9:00:00 UTC-03:00'),
+  endDate: new Date('1 November 2021 9:00:00 UTC-03:00'),
+  companyName: 'Arzion',
+  companyLink: 'https://www.arzion.com/',
   title: 'Frontend Developer',
   experiences: [
-    'Built new React web version for ResortPass, an ecommerce that offers day access to luxury hotel amenities.',
-    'Worked on the web CRM and workflow collaboration tool Alltum',
+    'Frontend Developer for Kognitiv\'s multilingual hotel booking tool (https://kognitiv.com/hoteltechnology).',
+    'The solution supports extensive marketing features such as promotions, offers, vouchers, price alerts, and corporate branding, under an optimized usability and conversion focused UX.',
+  ],
+}, {
+  startDate: new Date('1 January 2019 9:00:00 UTC-03:00'),
+  endDate: new Date('1 November 2020 9:00:00 UTC-03:00'),
+  companyName: 'Globant',
+  companyLink: 'https://www.globant.com/',
+  title: 'Web UI Developer',
+  experiences: [
+    'Within Telecom\'s digital transformation project, built the web version of “Mi Personal” where users can manage all their products, buy new ones, and view segmented cross-sell offers.',
+  ],
+}, {
+  startDate: new Date('1 May 2018 9:00:00 UTC-03:00'),
+  endDate: new Date('1 December 2018 9:00:00 UTC-03:00'),
+  title: 'Freelance React Developer',
+  experiences: [
+    'Developed progressive web apps and landing pages using React.js, Redux, and Material UI.',
+  ],
+}, {
+  title: 'Former experience',
+  experiences: [
+    '5 years as Product Analyst and Product Manager in LA Nación media group (Club LA Nación, Dridco and BonVivir).',
+    '4 years of entrepreneurial experience as a cofounder of a startup.  Obtained financing from Argentine Technological Fund (FONTAR) for developing a mobile web portal for events and conferences (https://www.guivent.com).',
+    '2 years as Game Analyst in Vostu.  Vostu was the largest social games developer in Latin America in the early 2010s with more than 20 million active users at its peak.',
   ],
   useBullets: true,
-}, {
-  startDate: new Date('November 2021'),
-  companyName: 'Nimble',
-  title: 'Frontend Developer',
-  experiences: [
-    'Built new React web version for ResortPass, an ecommerce that offers day access to luxury hotel amenities.',
-    'Worked on the web CRM and workflow collaboration tool Alltum',
-  ],
 }];

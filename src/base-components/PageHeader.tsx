@@ -24,39 +24,44 @@ function PageHeader({
   title,
   tagline,
 } : PageHeaderProps) {
+  const breakpoint = 'sm';
+
   return (
     <Flex
       as="header"
-      direction={{ base: 'column', md: 'row' }}
+      height={{ base: 'auto', [breakpoint]: '250px' }}
+      direction={{ base: 'column', [breakpoint]: 'row' }}
       background="white"
       boxShadow="lg"
       border="1px"
       borderColor="gray.200"
       borderRadius="lg"
-      paddingTop={{ base: 8, md: 0 }}
-      paddingX={{ base: 12, md: 0 }}
+      padding={0}
     >
       <Box
-        order={{ base: 0, md: 2 }}
-        maxWidth={{ base: '350px', md: '250px' }}
+        order={{ base: 0, [breakpoint]: 2 }}
+        maxWidth={{ base: '100%', [breakpoint]: '250px' }}
+        height="100%"
         alignSelf="center"
       >
         <Image
           src={avatar}
           alt={name}
-          alignSelf={{ base: 'center', md: 'flex-start' }}
+          alignSelf={{ base: 'center', [breakpoint]: 'flex-start' }}
+          width="100%"
           height="100%"
           objectFit="cover"
-          boxShadow={{ base: 'md', md: 'md' }}
-          borderRightRadius="lg"
-          borderLeftRadius={{ base: 'lg', md: 'none' }}
+          boxShadow="md"
+          borderTopLeftRadius={{ base: 'lg', [breakpoint]: 'none' }}
+          borderTopRightRadius="lg"
+          borderBottomRightRadius={{ base: 'none', [breakpoint]: 'lg' }}
         />
       </Box>
       {/* Spacer */}
       <Box order={1} width="5vw" height={4} />
       <Box
-        order={{ base: 2, md: 0 }}
-        alignSelf={{ base: 'center', md: 'center' }}
+        order={{ base: 2, [breakpoint]: 0 }}
+        alignSelf="center"
         flexGrow={1}
         paddingLeft={4}
         paddingY={6}
