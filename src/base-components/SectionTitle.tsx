@@ -16,6 +16,7 @@ const SectionTitle = ({
     padding={4}
     background="#D6F3FF"
     color="#0A4478"
+    border="1px solid rgba(10,68,120,0.5)"
     display="flex"
     alignItems="center"
   >

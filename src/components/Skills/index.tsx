@@ -22,7 +22,10 @@ const Skills = ({
       marginTop={3}
     >
       {skills.map((skill) => (
-        <Box width={skill.variant === 'bullet' ? '100%' : 'auto'}>
+        <Box
+          key={skill.description}
+          width={skill.variant === 'bullet' ? '100%' : 'auto'}
+        >
           <Skill
             key={skill.description}
             skill={skill}

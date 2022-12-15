@@ -6,6 +6,7 @@ import {
   Text,
   UnorderedList,
   ListItem,
+  StackDivider,
 } from '@chakra-ui/react';
 import { AiOutlineCode } from 'react-icons/ai';
 
@@ -20,7 +21,7 @@ const ProfessionalExperience = (
       title="Professional Experience"
       SectionIcon={AiOutlineCode}
     />
-    <VStack spacing={6}>
+    <VStack spacing={6} divider={<StackDivider />}>
       {professionalExperiences.map((item) => {
         const {
           startDate,
@@ -73,7 +74,14 @@ const ProfessionalExperience = (
               marginTop={3}
               marginBottom={3}
             >
-              {experiences.map((experience) => <ItemComponent>{experience}</ItemComponent>)}
+              {experiences.map((experience) => (
+                <ItemComponent
+                  key={experience}
+                  textAlign="justify"
+                >
+                  {experience}
+                </ItemComponent>
+              ))}
             </ListComponent>
           </Box>
         );
