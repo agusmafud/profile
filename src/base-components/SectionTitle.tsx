@@ -19,6 +19,7 @@ const SectionTitle = ({
     border="1px solid rgba(10,68,120,0.5)"
     display="flex"
     alignItems="center"
+    boxShadow="base"
   >
     {SectionIcon && <Icon marginRight={2} as={SectionIcon} />}
     <Text>

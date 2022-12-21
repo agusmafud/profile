@@ -6,13 +6,16 @@ import {
 } from '@chakra-ui/react';
 
 import background from 'assets/background.png';
+import Section from 'base-components/Section';
+import NavBar from 'components/NavBar';
+import { Section as SectionProps } from 'types';
 
 const AppLayout = ({
   header,
-  content,
+  sections,
 } : {
   header: React.ReactNode,
-  content: React.ReactNode,
+  sections: SectionProps[],
 }) => (
   <Flex
     backgroundImage={background}
@@ -45,10 +48,23 @@ const AppLayout = ({
       <Box
         width="90%"
         maxWidth={{ base: '90%', md: '800px' }}
-        margin={6}
+        position="sticky"
+        top={2}
+        marginTop={6}
       >
-        <VStack spacing={12}>
-          {content}
+        <NavBar sections={sections} />
+      </Box>
+      <Box
+        width="90%"
+        maxWidth={{ base: '90%', md: '800px' }}
+        marginX={6}
+        marginTop={0}
+        marginBottom="150px"
+      >
+        <VStack spacing={0}>
+          {sections.map((section) => (
+            <Section key={section.title} section={section} />
+          ))}
         </VStack>
       </Box>
     </Flex>

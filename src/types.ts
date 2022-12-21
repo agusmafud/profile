@@ -1,6 +1,13 @@
 import React from 'react';
 import { IconType } from 'react-icons/lib';
 
+export type Section = {
+  id: string,
+  title: string,
+  SectionIcon: IconType,
+  Component: React.ReactNode,
+};
+
 export type PersonalInfoItem = {
   key: string,
   label?: string,
@@ -28,13 +35,15 @@ export type DevStackItem = {
   skills: Skill[],
 };
 
+export type Experience = string | React.ReactNode;
+
 export type ProfessionalExperienceItem = {
   startDate?: Date,
   endDate?: Date,
   companyName?: string,
   companyLink?: string,
   title: string,
-  experiences: string[],
+  experiences: Experience[],
   useBullets?: boolean,
 };
 
