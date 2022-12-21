@@ -32,8 +32,8 @@ const NavBar = ({ sections } : { sections: Section[] }) => {
     const sectionElement = document.querySelector(`#${sectionId}`);
 
     if (sectionElement) {
-      sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' });
-      setTimeout(() => closeMobileSections(), 800);
+      closeMobileSections();
+      setTimeout(() => sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }), 400);
     }
   };
 
