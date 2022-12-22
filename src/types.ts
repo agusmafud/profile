@@ -57,3 +57,5 @@ export type Toast = {
   ToastIcon?: IconType,
   iconColor?: string,
 };
+
+export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl' | '2xl';

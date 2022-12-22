@@ -12,12 +12,18 @@ import {
 import { SlMenu } from 'react-icons/sl';
 import { CgClose } from 'react-icons/cg';
 
-import { Section } from 'types';
+import { Breakpoint, Section } from 'types';
 import NavBarItem from './NavBarItem';
 
-const compactBreakpointValue = 'md';
+const defaultCompactBreakpointValue = 'md';
 
-const NavBar = ({ sections } : { sections: Section[] }) => {
+const NavBar = ({
+  sections,
+  compactBreakpointValue = defaultCompactBreakpointValue,
+} : {
+  sections: Section[],
+  compactBreakpointValue?: Breakpoint,
+}) => {
   const [showMobileSections, setShowMobileSections] = useState(false);
   const toggleShowMobileSections = () => setShowMobileSections((prevState) => !prevState);
   const closeMobileSections = () => setShowMobileSections(false);
@@ -33,7 +39,7 @@ const NavBar = ({ sections } : { sections: Section[] }) => {
 
     if (sectionElement) {
       closeMobileSections();
-      setTimeout(() => sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }), 400);
+      setTimeout(() => sectionElement.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'start' }), 300);
     }
   };
 
@@ -78,9 +84,11 @@ const NavBar = ({ sections } : { sections: Section[] }) => {
             gap={{ base: 3, md: 0 }}
           >
             {sections.map((section) => (
-              <Fade in={showSections}>
+              <Fade
+                key={section.title}
+                in={showSections}
+              >
                 <NavBarItem
-                  key={section.title}
                   section={section}
                   scrollToSection={scrollToSection}
                 />
@@ -91,6 +99,10 @@ const NavBar = ({ sections } : { sections: Section[] }) => {
       </Stack>
     </Flex>
   );
+};
+
+NavBar.defaultProps = {
+  compactBreakpointValue: defaultCompactBreakpointValue,
 };
 
 export default NavBar;

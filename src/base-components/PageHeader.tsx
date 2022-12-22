@@ -2,13 +2,13 @@ import React from 'react';
 import {
   Box,
   Image,
-  Flex,
+  Stack,
   Heading,
   Text,
 } from '@chakra-ui/react';
 
 import { PersonalInfoItem } from 'types';
-import avatar from 'assets/avatar.png';
+import avatar from 'assets/avatar.jpg';
 import TitleValueDisplay from 'base-components/TitleValueDisplay';
 
 export type PageHeaderProps = {
@@ -27,9 +27,10 @@ function PageHeader({
   const breakpoint = 'sm';
 
   return (
-    <Flex
+    <Stack
       as="header"
-      height={{ base: 'auto', [breakpoint]: '250px' }}
+      alignItems="stretch"
+      height={{ base: 'auto', sm: '280px', md: '320px' }}
       direction={{ base: 'column', [breakpoint]: 'row' }}
       background="white"
       boxShadow="lg"
@@ -40,6 +41,7 @@ function PageHeader({
     >
       <Box
         order={{ base: 0, [breakpoint]: 2 }}
+        width="100%"
         maxWidth={{ base: '100%', [breakpoint]: '250px' }}
         height="100%"
         alignSelf="center"
@@ -69,7 +71,6 @@ function PageHeader({
         <Heading
           as="h1"
           size="lg"
-          noOfLines={1}
           paddingBottom={2}
         >
           {name}
@@ -89,7 +90,7 @@ function PageHeader({
         </Text>
         <Text fontSize="md">{tagline}</Text>
       </Box>
-    </Flex>
+    </Stack>
   );
 }
 

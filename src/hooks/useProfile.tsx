@@ -32,16 +32,11 @@ const useProfile = () => {
       value: 'agusmafud@gmail.com',
     },
     {
-      key: 'phoneNumber',
-      label: 'phone number',
-      value: '+(54 9 11) 3174.6328',
-    },
-    {
       key: 'github',
       value: (
         <ExternalLink
-          href="https://github.com/agusmafud"
-          label="github.com/agusmafud"
+          href="https://www.linkedin.com/in/agustinmafud/"
+          label="Linkedin"
           showExternalIcon
         />
       ),

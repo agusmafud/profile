@@ -18,7 +18,12 @@ const ExternalLink = ({
   >
     {label}
     {showExternalIcon && ' '}
-    {showExternalIcon && <ExternalLinkIcon mx="2px" />}
+    {showExternalIcon && (
+      <ExternalLinkIcon
+        marginTop="-4px"
+        alignSelf="center"
+      />
+    )}
   </Link>
 );
 
