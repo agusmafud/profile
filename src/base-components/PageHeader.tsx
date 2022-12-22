@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 
 import { PersonalInfoItem } from 'types';
-import avatar from 'assets/avatar.jpg';
+import avatar from 'assets/avatar.png';
 import TitleValueDisplay from 'base-components/TitleValueDisplay';
 
 export type PageHeaderProps = {
