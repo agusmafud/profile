@@ -30,7 +30,8 @@ function PageHeader({
     <Stack
       as="header"
       alignItems="stretch"
-      height={{ base: 'auto', sm: '280px', md: '320px' }}
+      width={{ base: 'auto', md: '600px' }}
+      height={{ base: 'auto', sm: '280px', md: '300px' }}
       direction={{ base: 'column', [breakpoint]: 'row' }}
       background="white"
       boxShadow="lg"
@@ -60,7 +61,7 @@ function PageHeader({
         />
       </Box>
       {/* Spacer */}
-      <Box order={1} width="5vw" height={4} />
+      <Box order={1} width="5vw" height={0} />
       <Box
         order={{ base: 2, [breakpoint]: 0 }}
         alignSelf="center"

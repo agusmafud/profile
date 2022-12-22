@@ -19,6 +19,7 @@ import {
   Education,
   ProfessionalExperienceItem,
   DevStackItem,
+  Repository,
 } from 'types';
 
 const useProfile = () => {
@@ -35,7 +36,7 @@ const useProfile = () => {
       key: 'github',
       value: (
         <ExternalLink
-          href="https://www.linkedin.com/in/agustinmafud/"
+          href="https://www.linkedin.com/in/agustinmafud"
           label="Linkedin"
           showExternalIcon
         />
@@ -362,6 +363,22 @@ const useProfile = () => {
     'Fan of endless talks on theoretical physics and consciousness.',
   ];
 
+  const codeRepos: Repository[] = [{
+    title: "This page's code",
+    description: 'Profile Page made with React',
+    url: 'https://github.com/agusmafud/profile',
+  }, {
+    title: 'Battleship game',
+    description: 'Simplified React version of the battleship game, player vs CPU.',
+    url: 'https://github.com/agusmafud/battleship',
+  }, {
+    title: 'Todo web app',
+    description: 'Simple todo progressive web app using React',
+    url: 'https://github.com/agusmafud/todoapp',
+  }];
+  const resumeUrl = `${process.env.PUBLIC_URL}/Agustín Mafud.pdf`;
+  const linkedinUrl = 'https://www.linkedin.com/in/agustinmafud';
+
   return {
     name,
     title,
@@ -373,6 +390,9 @@ const useProfile = () => {
     professionalExperiences,
     languagesDetails,
     hobbiesDetails,
+    codeRepos,
+    resumeUrl,
+    linkedinUrl,
   };
 };
 

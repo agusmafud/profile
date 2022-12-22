@@ -59,3 +59,9 @@ export type Toast = {
 };
 
 export type Breakpoint = 'sm' | 'md' | 'lg' | 'xl' | '2xl';
+
+export type Repository = {
+  title: string,
+  description: string,
+  url: string,
+};

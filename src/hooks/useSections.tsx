@@ -4,12 +4,14 @@ import { ImBooks } from 'react-icons/im';
 import { BsTools } from 'react-icons/bs';
 import { AiOutlineCode } from 'react-icons/ai';
 import { MdLanguage } from 'react-icons/md';
+import { TbWorldDownload } from 'react-icons/tb';
 
 import DevStack from 'components/DevStack';
 import Education from 'components/Education';
 import Hobbies from 'components/Hobbies';
 import Languages from 'components/Languages';
 import ProfessionalExperience from 'components/ProfessionalExperience';
+import Resources from 'components/Resources';
 import Summary from 'components/Summary';
 import useProfile from 'hooks/useProfile';
 import { Section } from 'types';
@@ -22,6 +24,9 @@ const useSections = () => {
     professionalExperiences,
     languagesDetails,
     hobbiesDetails,
+    codeRepos,
+    resumeUrl,
+    linkedinUrl,
   } = useProfile();
   const sections: Section[] = [
     {
@@ -59,6 +64,18 @@ const useSections = () => {
       title: 'Hobbies',
       SectionIcon: GiMountainClimbing,
       Component: <Hobbies details={hobbiesDetails} />,
+    },
+    {
+      id: 'resources',
+      title: 'Resources',
+      SectionIcon: TbWorldDownload,
+      Component: (
+        <Resources
+          codeRepos={codeRepos}
+          resumeUrl={resumeUrl}
+          linkedinUrl={linkedinUrl}
+        />
+      ),
     },
   ];
 

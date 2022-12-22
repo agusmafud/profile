@@ -32,7 +32,7 @@ const NavBar = ({
     base: showMobileSections,
     [compactBreakpointValue]: true,
   });
-  const MobileIcon = showMobileSections ? CgClose : SlMenu;
+  const MobileMenuIcon = showMobileSections ? CgClose : SlMenu;
 
   const scrollToSection = async (sectionId: string) => {
     const sectionElement = document.querySelector(`#${sectionId}`);
@@ -71,7 +71,7 @@ const NavBar = ({
           >
             <Icon
               boxSize={5}
-              as={MobileIcon}
+              as={MobileMenuIcon}
             />
           </Button>
         </Show>
