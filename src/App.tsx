@@ -10,7 +10,8 @@ function App() {
     name,
     title,
     tagline,
-    personalInfo,
+    resumeUrl,
+    linkedinUrl,
   } = useProfile();
   const sections = useSections();
 
@@ -19,9 +20,10 @@ function App() {
       header={(
         <PageHeader
           name={name}
-          personalInfo={personalInfo}
           title={title}
           tagline={tagline}
+          resumeUrl={resumeUrl}
+          linkedinUrl={linkedinUrl}
         />
       )}
       sections={sections}

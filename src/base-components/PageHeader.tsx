@@ -11,28 +11,35 @@ import {
   Stack,
   Button,
   useColorModeValue,
+  IconButton,
+  Link,
 } from '@chakra-ui/react';
+import { FaLinkedin } from 'react-icons/fa';
+import { TbFileDownload } from 'react-icons/tb';
 
 import { PersonalInfoItem } from 'types';
 import avatar from 'assets/avatar.jpg';
+import profileBackground from 'assets/profile-background.jpg';
 
 export type PageHeaderProps = {
   name: string,
-  personalInfo: PersonalInfoItem[],
   title: string,
   tagline: string,
+  resumeUrl: string,
+  linkedinUrl: string,
 };
 
 function PageHeader({
   name,
-  personalInfo,
   title,
   tagline,
+  resumeUrl,
+  linkedinUrl,
 } : PageHeaderProps) {
   return (
     <Center py={6}>
       <Box
-        maxW="270px"
+        maxW="320px"
         w="full"
         bg={useColorModeValue('white', 'gray.800')}
         boxShadow="2xl"
@@ -42,7 +49,7 @@ function PageHeader({
         <Image
           h="120px"
           w="full"
-          src="https://images.unsplash.com/photo-1612865547334-09cb8cb455da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+          src={profileBackground}
           objectFit="cover"
           alt="#"
         />
@@ -61,37 +68,43 @@ function PageHeader({
             <Heading fontSize="2xl" fontWeight={500} fontFamily="body">
               {name}
             </Heading>
-            <Text color="gray.500">{title}</Text>
+            <Text color="gray.600">{title}</Text>
+            <Text color="gray.500">{tagline}</Text>
           </Stack>
 
-          <Stack direction="row" justify="center" spacing={6}>
-            <Stack spacing={0} align="center">
-              <Text fontWeight={600}>23k</Text>
-              <Text fontSize="sm" color="gray.500">
-                Followers
-              </Text>
-            </Stack>
-            <Stack spacing={0} align="center">
-              <Text fontWeight={600}>23k</Text>
-              <Text fontSize="sm" color="gray.500">
-                Followers
-              </Text>
-            </Stack>
+          <Stack direction="row" justify="center" spacing={2}>
+            <Link
+              href={linkedinUrl}
+              isExternal
+              _hover={{ textTransform: 'none' }}
+            >
+              <IconButton
+                colorScheme="linkedin"
+                aria-label="Linkedin"
+                icon={<FaLinkedin />}
+                _hover={{
+                  transform: 'translateY(-2px)',
+                  boxShadow: 'lg',
+                }}
+              />
+            </Link>
+            <Link
+              href={resumeUrl}
+              _hover={{ textTransform: 'none' }}
+            >
+              <Button
+                colorScheme="gray"
+                border="1px solid rgba(0,0,0,0.3)"
+                leftIcon={<TbFileDownload />}
+                _hover={{
+                  transform: 'translateY(-2px)',
+                  boxShadow: 'lg',
+                }}
+              >
+                Resume
+              </Button>
+            </Link>
           </Stack>
-
-          <Button
-            w="full"
-            mt={8}
-            bg={useColorModeValue('#151f21', 'gray.900')}
-            color="white"
-            rounded="md"
-            _hover={{
-              transform: 'translateY(-2px)',
-              boxShadow: 'lg',
-            }}
-          >
-            Follow
-          </Button>
         </Box>
       </Box>
     </Center>
