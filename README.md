@@ -1,4 +1,4 @@
-# Battleship game
+# Profile page
 Profile page made with React.
 ### Live Demo: [https://agusmafud.github.io/profile/](https://agusmafud.github.io/profile/)
 
