@@ -33,7 +33,7 @@ const useProfile = () => {
       value: 'agusmafud@gmail.com',
     },
     {
-      key: 'github',
+      key: 'linkedin',
       value: (
         <ExternalLink
           href="https://www.linkedin.com/in/agustinmafud"

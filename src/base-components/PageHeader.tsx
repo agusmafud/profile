@@ -1,15 +1,20 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import {
-  Box,
-  Image,
-  Stack,
   Heading,
+  Avatar,
+  Box,
+  Center,
+  Image,
+  Flex,
   Text,
+  Stack,
+  Button,
+  useColorModeValue,
 } from '@chakra-ui/react';
 
 import { PersonalInfoItem } from 'types';
-import avatar from 'assets/avatar.png';
-import TitleValueDisplay from 'base-components/TitleValueDisplay';
+import avatar from 'assets/avatar.jpg';
 
 export type PageHeaderProps = {
   name: string,
@@ -24,74 +29,72 @@ function PageHeader({
   title,
   tagline,
 } : PageHeaderProps) {
-  const breakpoint = 'sm';
-
   return (
-    <Stack
-      as="header"
-      alignItems="stretch"
-      width={{ base: 'auto', md: '600px' }}
-      height={{ base: 'auto', sm: '280px', md: '300px' }}
-      direction={{ base: 'column', [breakpoint]: 'row' }}
-      background="white"
-      boxShadow="lg"
-      border="1px"
-      borderColor="gray.200"
-      borderRadius="lg"
-      padding={0}
-    >
+    <Center py={6}>
       <Box
-        order={{ base: 0, [breakpoint]: 2 }}
-        width="100%"
-        maxWidth={{ base: '100%', [breakpoint]: '250px' }}
-        height="100%"
-        alignSelf="center"
+        maxW="270px"
+        w="full"
+        bg={useColorModeValue('white', 'gray.800')}
+        boxShadow="2xl"
+        rounded="md"
+        overflow="hidden"
       >
         <Image
-          src={avatar}
-          alt={name}
-          alignSelf={{ base: 'center', [breakpoint]: 'flex-start' }}
-          width="100%"
-          height="100%"
+          h="120px"
+          w="full"
+          src="https://images.unsplash.com/photo-1612865547334-09cb8cb455da?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
           objectFit="cover"
-          boxShadow="md"
-          borderTopLeftRadius={{ base: 'lg', [breakpoint]: 'none' }}
-          borderTopRightRadius="lg"
-          borderBottomRightRadius={{ base: 'none', [breakpoint]: 'lg' }}
+          alt="#"
         />
-      </Box>
-      {/* Spacer */}
-      <Box order={1} width="5vw" height={0} />
-      <Box
-        order={{ base: 2, [breakpoint]: 0 }}
-        alignSelf="center"
-        flexGrow={1}
-        paddingLeft={4}
-        paddingY={6}
-      >
-        <Heading
-          as="h1"
-          size="lg"
-          paddingBottom={2}
-        >
-          {name}
-        </Heading>
-        {personalInfo.map((data) => (
-          <TitleValueDisplay
-            key={data.key}
-            title={data.label}
-            value={data.value}
+        <Flex justify="center" mt={-12}>
+          <Avatar
+            size="xl"
+            src={avatar}
+            css={{
+              border: '2px solid white',
+            }}
           />
-        ))}
-        <Text
-          fontSize="md"
-          marginTop={4}
-        >
-          <b>{title}</b>
-        </Text>
-        <Text fontSize="md">{tagline}</Text>
+        </Flex>
+
+        <Box p={6}>
+          <Stack spacing={0} align="center" mb={5}>
+            <Heading fontSize="2xl" fontWeight={500} fontFamily="body">
+              {name}
+            </Heading>
+            <Text color="gray.500">{title}</Text>
+          </Stack>
+
+          <Stack direction="row" justify="center" spacing={6}>
+            <Stack spacing={0} align="center">
+              <Text fontWeight={600}>23k</Text>
+              <Text fontSize="sm" color="gray.500">
+                Followers
+              </Text>
+            </Stack>
+            <Stack spacing={0} align="center">
+              <Text fontWeight={600}>23k</Text>
+              <Text fontSize="sm" color="gray.500">
+                Followers
+              </Text>
+            </Stack>
+          </Stack>
+
+          <Button
+            w="full"
+            mt={8}
+            bg={useColorModeValue('#151f21', 'gray.900')}
+            color="white"
+            rounded="md"
+            _hover={{
+              transform: 'translateY(-2px)',
+              boxShadow: 'lg',
+            }}
+          >
+            Follow
+          </Button>
+        </Box>
       </Box>
-    </Stack>
+    </Center>
   );
 }
 
